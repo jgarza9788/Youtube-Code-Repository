@@ -16,6 +16,8 @@ if __name__ == '__main__':
     scores = []
     eps_history = []
 
+    print(env.action_space.n)
+
     for i in range(n_games):
         done = False
         score = 0
