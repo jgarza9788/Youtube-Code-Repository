@@ -89,35 +89,6 @@ class Agent():
         q_target = np.copy(q_eval)
         batch_index = np.arange(self.batch_size, dtype=np.int32)
 
-        print('rewards')
-        print(type(rewards))
-        print(rewards.shape)
-
-        print()
-
-        print('self.gamma')
-        print(type(self.gamma))
-        print(self.gamma)
-
-        print()
-
-        print('dones')
-        print(type(dones))
-        print(dones.shape)
-
-        print()
-
-        print('q_next')
-        print(q_next)
-        print(q_next.shape)
-
-        print() 
-
-        print('np.max(q_next,axis=1)')
-        print(np.max(q_next,axis=1))
-        print(np.max(q_next,axis=1).shape)
-        input()
-
         q_target[batch_index, actions] = rewards + \
                         self.gamma * np.max(q_next, axis=1)*dones
 
